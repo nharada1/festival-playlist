@@ -44,7 +44,7 @@ def get_top_from_stats(stats_url, year=None):
         Location of the artist's stats page
     """
     if year:
-        stats_url += '?year=' + year
+        stats_url += '?year={}'.format(year)
 
     search_html = urllib.request.urlopen(stats_url).read()
     search_soup = BeautifulSoup(search_html, "html.parser")

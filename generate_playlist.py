@@ -23,11 +23,18 @@ def main(parsed_args):
     year = None
     # Choose to read from command line or file for input
     try:
-        # Optional arguments
+        # Optional arguments and checks
         if parsed_args.w:
-            f = open(parsed_args.w, 'w')
+            try:
+                f = open(parsed_args.w, 'w')
+            except:
+                print("Couldn't create file {}".format(parsed_args.w))
+                return
         if parsed_args.y:
-            year = parsed_args.y
+            if not parsed_args.y.isdigit():
+                print("Please enter a valid year (no abbreviations)")
+                return
+            year = int(parsed_args.y)
 
         # Start CSV header, purposely lowercase
         print('artist, title', file=f)

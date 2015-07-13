@@ -4,13 +4,13 @@ Upcoming music festival? Create a playlist of the lineup's most popular live son
 
 * Python 2.7 or 3.4+
 * beautifulsoup 4
-* futures
+* future
 
 # Installation:
 No installation required, just ensure dependencies are correctly installed. If using pip, run `pip install -r requirements.txt`.
 
 # Usage:
-Run festival-playlist with either a textfile of artists or pass artist list directly into the command line. 
+Run festival-playlist with either a text file of artists or pass artist list directly into the command line. 
 
 ```
 $ python generate_playlist.py "wilco, chvrches, panda bear" -n 5
