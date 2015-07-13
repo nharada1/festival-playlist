@@ -1,4 +1,4 @@
-Upcoming music festival? Create a playlist of the lineup's most popular live songs. Based on data from [setlist.fm](http://www.setlist.fm).
+Upcoming music festival? Create a playlist of the lineup's most popular live songs. Based on data from [setlist.fm](http://www.setlist.fm). Output CSV file will work with [Ivy](http://www.ivyishere.org/) to create Spotify playlists.
 
 # Requirements:
 
@@ -33,7 +33,7 @@ panda bear, Boys Latin
 panda bear, Crosswords
 ```
 
-## Help text:
+# Help text:
 
 ```
 usage: generate_playlist.py [-h] [-n N] [-w W] [-y Y] artist_list
@@ -52,3 +52,5 @@ optional arguments:
                filtering)
 ```
 
+### Disclaimer
+Neither I nor festival-playlist are affiliated with Spotify, setlist.fm, or Ivy. This product is in no way endorsed or approved by any of these services.
