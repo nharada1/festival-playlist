@@ -13,7 +13,7 @@ No installation required, just ensure dependencies are correctly installed. If u
 Run festival-playlist with either a text file of artists or pass artist list directly into the command line. 
 
 ```
-$ python generate_playlist.py "wilco, chvrches, panda bear" -n 5
+$ python festival-playlist.py "wilco, chvrches, panda bear" -n 5
 
 artist, title
 wilco, A Shot in the Arm
@@ -36,7 +36,7 @@ panda bear, Crosswords
 # Help text:
 
 ```
-usage: generate_playlist.py [-h] [-n N] [-w W] [-y Y] artist_list
+usage: festival-playlist.py [-h] [-n N] [-w W] [-y Y] artist_list
 
 Create a CSV of the most popular live songs by a set of artists
 
