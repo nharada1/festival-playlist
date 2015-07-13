@@ -53,7 +53,8 @@ optional arguments:
 ```
 
 # Known Issues:
-* Setlist.fm has issues with some artists, such as MØ
+* Setlist.fm has issues with some artists, such as MØ. You may be able to avoid this by replacing the unicode characters with regular ones.
+* Python 2 may also have issues with unicode characters.
 * Your terminal may try and interpret characters as control sequences. Use the text file input if you have issues with this. For example, A$AP Rocky.
 
 ### Disclaimer
