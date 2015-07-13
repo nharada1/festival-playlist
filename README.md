@@ -52,5 +52,9 @@ optional arguments:
                filtering)
 ```
 
+# Known Issues:
+* Setlist.fm has issues with some artists, such as MØ
+* Your terminal may try and interpret characters as control sequences. Use the text file input if you have issues with this. For example, A$AP Rocky.
+
 ### Disclaimer
 Neither I nor festival-playlist are affiliated with Spotify, setlist.fm, or Ivy. This product is in no way endorsed or approved by any of these services.

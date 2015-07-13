@@ -27,8 +27,9 @@ def main(parsed_args):
         if parsed_args.w:
             try:
                 f = open(parsed_args.w, 'w')
-            except:
+            except Exception as e:
                 print("Couldn't create file {}".format(parsed_args.w))
+                print("Underlying code says: {}".format(e))
                 return
         if parsed_args.y:
             if not parsed_args.y.isdigit():
@@ -37,16 +38,24 @@ def main(parsed_args):
             year = int(parsed_args.y)
 
         # Start CSV header, purposely lowercase
+        artists_not_found = []
         print('artist, title', file=f)
         for line in lines:
-            artist = SetlistArtist(line)
-            # Get popular songs for each artist, will only return however many exist
-            songs = artist.popular_songs(parsed_args.n, year=year)
-            for song in songs:
-                    print(artist.name + ', ' + song, file=f)
+            try:
+                artist = SetlistArtist(line)
+
+                # Get popular songs for each artist, will only return however many exist
+                songs = artist.popular_songs(parsed_args.n, year=year)
+                for song in songs:
+                        print(artist.name + ', ' + song, file=f)
+            except ValueError as v:
+                artists_not_found.append(line)
+                pass
     finally:
         if f:
             f.close()
+        if artists_not_found:
+            print("Failed to find the following artists: {}".format(artists_not_found))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Create a CSV of the most popular live songs by a set of artists')
